@@ -67,7 +67,7 @@ jobs:
         with:
           app-name: 'hereagainnow'
           slot-name: 'Production'
-          package: .
+          package: "."
           
 
 
