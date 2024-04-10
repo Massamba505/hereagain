@@ -55,7 +55,7 @@ jobs:
         run: unzip release.zip
       
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_16932E9DF0C64567A3C8E85CC8279FF5 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_106BD90F968B4B2D8DD9120E40B72382 }}
@@ -63,9 +63,11 @@ jobs:
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'hereagainnow'
           slot-name: 'Production'
           package: .
           
+
+
